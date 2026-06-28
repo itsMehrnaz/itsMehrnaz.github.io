@@ -84,21 +84,54 @@ const posts = (await getCollection('blog')).sort(
 					font-size: 1.563em;
 				}
 			}
+                        .lang-filter {
+				display: flex;
+				gap: 0.5rem;
+				justify-content: center;
+				margin-bottom: 2rem;
+			}
+			.lang-filter button {
+				padding: 0.4rem 1rem;
+				border: 1px solid rgb(var(--gray));
+				border-radius: 999px;
+				background: transparent;
+				color: rgb(var(--gray-dark));
+				cursor: pointer;
+				font: inherit;
+				transition: 0.2s ease;
+			}
+			.lang-filter button:hover {
+				border-color: rgb(var(--accent));
+				color: rgb(var(--accent));
+			}
+			.lang-filter button.active {
+				background: rgb(var(--accent));
+				border-color: rgb(var(--accent));
+				color: white;
+			}
+			li.hidden {
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
 			<section>
+                        <div class="lang-filter">
+					<button class="active" data-filter="all">همه</button>
+					<button data-filter="fa">فارسی</button>
+					<button data-filter="en">English</button>
+				</div>
 				<ul>
 					{
 						posts.map((post) => (
-							<li>
+							<li data-lang={post.data.lang}>
 								<a href={`/blog/${post.id}/`}>
 									{post.data.heroImage && (
 										<Image width={720} height={360} src={post.data.heroImage} alt="" />
 									)}
-									<h4 class="title">{post.data.title}</h4>
+									<h4 class="title" dir={post.data.lang === 'fa' ? 'rtl' : 'ltr'}>{post.data.title}</h4>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
@@ -110,5 +143,22 @@ const posts = (await getCollection('blog')).sort(
 			</section>
 		</main>
 		<Footer />
+<script>
+			const buttons = document.querySelectorAll<HTMLButtonElement>('.lang-filter button');
+			const items = document.querySelectorAll<HTMLLIElement>('main ul li');
+
+			buttons.forEach((btn) => {
+				btn.addEventListener('click', () => {
+					const filter = btn.dataset.filter;
+					buttons.forEach((b) => b.classList.remove('active'));
+					btn.classList.add('active');
+
+					items.forEach((li) => {
+						const show = filter === 'all' || li.dataset.lang === filter;
+						li.classList.toggle('hidden', !show);
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
