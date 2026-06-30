@@ -1,3 +1,12 @@
+---
+title: 'Why async Functions in Rust with `tokio::spawn` Must Be `'static` (and What `move` Really Means)'
+description: 'Why async Functions in Rust with `tokio::spawn` Must Be `'static` (and What `move` Really Means)'
+pubDate: 'Jun 30 2026'
+lang: en
+heroImage: '../../assets/Rust_en.webp'
+---
+
+
 # Why async Functions in Rust with `tokio::spawn` Must Be `'static` (and What `move` Really Means)
 
 
