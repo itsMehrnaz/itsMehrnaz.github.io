@@ -9,40 +9,121 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+<style>
+			.hero {
+				text-align: center;
+				padding: 2rem 0 1rem;
+			}
+			.hero h1 {
+				margin-bottom: 0.5rem;
+			}
+			.tagline {
+				max-width: 40rem;
+				margin: 0 auto 1.5rem;
+				color: rgb(var(--gray-dark));
+			}
+			.links {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				justify-content: center;
+			}
+			.links a {
+				padding: 0.4rem 1rem;
+				border: 1px solid rgb(var(--gray));
+				border-radius: 999px;
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			.links a:hover {
+				border-color: rgb(var(--accent));
+				color: rgb(var(--accent));
+			}
+			section {
+				margin-bottom: 2.5rem;
+			}
+			.project-list {
+				list-style: none;
+				padding: 0;
+				display: grid;
+				gap: 1rem;
+			}
+			.project-list li {
+				padding: 1rem 1.25rem;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				transition: 0.2s ease;
+			}
+			.project-list li:hover {
+				box-shadow: var(--box-shadow);
+			}
+			.project-list h3 {
+				margin: 0 0 0.4rem;
+			}
+			.project-list p {
+				margin: 0;
+				color: rgb(var(--gray-dark));
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<h1>welcome to my world! 👾</h1>
+				<p class="tagline">
+					I'm Mehrnaz — a CS student living somewhere between low-level systems
+					and the security holes hiding inside them. I break things to understand
+					how they work, then write about it.
+				</p>
+				<div class="links">
+					<a href="https://github.com/itsMehrnaz" target="_blank">GitHub</a>
+					<a href="https://YOUR-LINKEDIN" target="_blank">LinkedIn</a>
+					<a href="https://YOUR-MEDIUM" target="_blank">Medium</a>
+					<a href="mailto:Mehrnaz.jalalifar.cs@gmail.com">Email</a>
+					<a href="/blog">Blog</a>
+				</div>
+			</section>
+
+			<section class="about">
+				<h2>What I do</h2>
+				<p>
+					My main playground is <strong>offensive security</strong> —
+					penetration testing, reverse engineering, and CTFs. On calmer days
+					I write backend code and build systems software in
+					<strong>Rust</strong>, because memory safety is worth the fight.
+					I care about how things actually work under the hood: Windows &
+					Linux internals, memory, and the ways they break.
+				</p>
+			</section>
+
+			<section class="projects">
+				<h2>Things I've built</h2>
+				<ul class="project-list">
+					<li>
+						<h3>SD-ClusterSkeleton</h3>
+						<p>
+							A reusable SDN-based framework with RL-enhanced fuzzy clustering
+							for wireless sensor networks — achieved a 47% improvement in
+							network lifetime.
+						</p>
+					</li>
+					<li>
+						<h3>Vulnerability Detection System</h3>
+						<p>
+							A PHP/Laravel web app that automatically scans code for common
+							vulnerability patterns like SQLi and XSS.
+						</p>
+					</li>
+					<li>
+						<h3>C Compiler (from scratch)</h3>
+						<p>
+							A C compiler written in C — lexing, parsing, and code generation.
+							A work in progress, one commit at a time.
+						</p>
+					</li>
+				</ul>
+			</section>
 		</main>
 		<Footer />
 	</body>
