@@ -16,20 +16,20 @@ in Persian.
 
 ## Running locally
 
-\`\`\`bash
+```bash
 npm install
 npm run dev
-\`\`\`
+```
 
 ## Adding a post
 
 Drop a Markdown file in `src/content/blog/` with frontmatter:
 
-\`\`\`markdown
+```markdown
 ---
 title: "Post title"
 description: "Short description"
-pubDate: 'Jun 30 2026'
+pubDate: 'Jul 06 2026'
 lang: en
 ---
-\`\`\`
+```
