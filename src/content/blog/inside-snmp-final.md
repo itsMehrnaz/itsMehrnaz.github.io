@@ -1,10 +1,9 @@
 ---
 title: "Inside SNMP: From Packets to Rust"
-date: 2026-06-30
-series: inside-protocols
-part: 1
-tags: [snmp, rust, networking, pentest, wireshark]
-summary: "How does Zabbix read your CPU usage without ever logging into your server? We go from SNMP theory, to real packets in Wireshark, to an attacker's view, all the way down to hand-building an SNMP packet in Rust."
+description: "How does Zabbix read your CPU usage without ever logging into your server?"
+pubDate: 'Jun 30 2026'
+lang: en
+heroImage: '../../assets/snmp_rust_en.png'
 ---
 
 # Inside SNMP: From Packets to Rust
@@ -43,7 +42,7 @@ That's the whole mental model: the Manager sends a question addressed to an OID,
 
 Here's a real SNMP exchange captured in Wireshark — a `get-request` and its matching `get-response`:
 
-![SNMP get-request and get-response in the Wireshark packet list](images/01-packet-list.png)
+![SNMP get-request and get-response in the Wireshark packet list](../../assets/01-packet-list.png)
 
 SNMP nests neatly inside the lower network layers:
 
@@ -57,7 +56,7 @@ Ethernet → IP → UDP (161) → SNMP
 
 Expanding the packet in Wireshark shows exactly this structure — version, community string, the PDU type, and the variable binding holding the OID we asked for:
 
-![Fully expanded SNMP tree in the Wireshark details pane](images/02-packet-details.png)
+![Fully expanded SNMP tree in the Wireshark details pane](../../assets/02-packet-details.png)
 
 Now let's decode one OID. The classic example is `sysName`, the system's name:
 
@@ -156,7 +155,7 @@ Rust → UDP Socket → ASN.1 → BER Encoding → SNMP Packet → Linux Agent
 
 Notice the bytes `0x70 0x75 0x62 0x6c 0x69 0x63` in the array — that's `public` in ASCII. The exact same bytes Wireshark highlights when you click the community field:
 
-![The community bytes 70 75 62 6c 69 63 highlighted in the Wireshark hex pane](images/03-hex-community.png)
+![The community bytes 70 75 62 6c 69 63 highlighted in the Wireshark hex pane](../../assets/03-hex-community.png)
 
 Running it against a local agent produces:
 
