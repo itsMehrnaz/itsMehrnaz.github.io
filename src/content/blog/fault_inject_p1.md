@@ -8,7 +8,6 @@ heroImage: '../../assets/fault_inject_p1.jpeg'
 
 ---
 
-# Hardware Security & Fault Injection: Building an Automated Emulator-Based Framework in Rust (Part 1)
 
 When we think about software security, we usually assume that instructions executed by the CPU are deterministic and untamperable. If the code says `mov r0, #0`, the register will become `0`. But in the realm of **Hardware Security**, physical attacks like voltage glitching, clock manipulation, or electromagnetic pulses can disrupt a processor's normal operation—causing it to **skip critical instructions** entirely.
 
