@@ -1,11 +1,9 @@
-  GNU nano 7.2                      fault_injection_p1.md                                
 ---
-title: "Hardware Security & Fault Injection: Building an Automated Emulator-Based Framework in Rust (Part 1)"
+title: "Hardware Security & Fault Injection: Building an Automated Emulator-Based..."
 description: "fault-injection series"
-pubDate: '2026-07-31'
+pubDate: 2026-07-31
 lang: en
-heroImage: '../../assets/fault_inject_p1.jpeg'
-
+heroImage: "../../assets/fault_inject_p1.jpeg"
 ---
 
 

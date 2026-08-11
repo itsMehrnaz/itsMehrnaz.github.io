@@ -1,4 +1,3 @@
-  GNU nano 7.2                                                                                          mitm-hsts.md                                                                                                    
 ---
 title: " Hardware Security & Fault Injection: Defending Assembly Code with Double Verification (Part 2)"
 description: "fault-injection series"
