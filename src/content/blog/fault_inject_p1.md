@@ -1,7 +1,7 @@
   GNU nano 7.2                      mitm-hsts.md                                
 ---
 title: "Hardware Security & Fault Injection: Building an Automated Emulator-Based Framework in Rust (Part 1)"
-description: ""
+description: "fault-injection series"
 pubDate: 'Jul 31 2026'
 lang: en
 heroImage: '../../assets/fault_inject_p1.jpeg'
