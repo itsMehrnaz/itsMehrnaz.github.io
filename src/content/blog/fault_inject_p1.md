@@ -2,7 +2,7 @@
 ---
 title: "Hardware Security & Fault Injection: Building an Automated Emulator-Based Framework in Rust (Part 1)"
 description: "fault-injection series"
-pubDate: 'Jul 31 2026'
+pubDate: '2026-07-31'
 lang: en
 heroImage: '../../assets/fault_inject_p1.jpeg'
 
