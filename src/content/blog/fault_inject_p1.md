@@ -1,4 +1,4 @@
-  GNU nano 7.2                      mitm-hsts.md                                
+  GNU nano 7.2                      fault_injection_p1.md                                
 ---
 title: "Hardware Security & Fault Injection: Building an Automated Emulator-Based Framework in Rust (Part 1)"
 description: "fault-injection series"
